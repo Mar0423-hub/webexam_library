@@ -20,7 +20,7 @@ import bleach
 import markdown2
 import csv
 from io import StringIO
-from models import db, User, Book, Review, ViewHistory, Genre, Cover, Role
+from .models import db, User, Book, Review, ViewHistory, Genre, Cover, Role
 from forms import LoginForm, BookForm, ReviewForm
 from config import Config
 from utils import allowed_file, save_cover, sanitize_description, generate_csv
