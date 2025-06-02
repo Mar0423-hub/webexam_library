@@ -1,0 +1,148 @@
+:root {
+  --primary: #4e73df;
+  --primary-dark: #2e59d9;
+  --secondary: #858796;
+  --success: #1cc88a;
+  --info: #36b9cc;
+  --warning: #f6c23e;
+  --danger: #e74a3b;
+  --light: #f8f9fc;
+  --dark: #5a5c69;
+  --gold: #ffd700;
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow: 0 0.15rem 1.75rem rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fc;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Навигация */
+.navbar {
+  box-shadow: var(--shadow);
+  padding: 0.75rem 1rem;
+  background: var(--primary) !important;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: white !important;
+}
+
+.nav-link {
+  font-weight: 600;
+  padding: 0.5rem 1rem !important;
+  color: rgba(255,255,255,0.8) !important;
+}
+
+.nav-link:hover {
+  color: white !important;
+}
+
+/* Карточки книг */
+.book-card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.book-cover {
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.book-card:hover .book-cover {
+  transform: scale(1.03);
+}
+
+/* Страница книги */
+.book-meta {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Рецензии */
+.review-card {
+  border-left: 3px solid var(--primary);
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .book-cover {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-cover {
+    height: 200px;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .book-cover {
+    height: 180px;
+  }
+}
+
+/* Дополнительные стили */
+.badge-genre {
+  background-color: #e6e6f2;
+  color: #4a4a8a;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.rating-stars {
+  color: var(--gold);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
