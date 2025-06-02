@@ -20,12 +20,11 @@ import bleach
 import markdown2
 import csv
 from io import StringIO
-from models import db, User, Book, Review, ViewHistory, Genre, Cover
+from models import db, User, Book, Review, ViewHistory, Genre, Cover, Role
 from forms import LoginForm, BookForm, ReviewForm
 from config import Config
 from utils import allowed_file, save_cover, sanitize_description, generate_csv
 from forms import ProfileForm
-from models import db, Role, Genre  # Добавьте явный импорт
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
 from flask_wtf.csrf import CSRFProtect
