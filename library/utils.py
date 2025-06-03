@@ -6,10 +6,8 @@ from io import StringIO
 import csv
 
 
-# -------------------------
-# Функции для работы с файлами
-# -------------------------
 
+# Функции для работы с файлами
 def allowed_file(filename):
     """Проверяет, разрешено ли расширение файла"""
     ALLOWED_EXTENSIONS = current_app.config.get('ALLOWED_EXTENSIONS', {'png', 'jpg', 'jpeg', 'gif'})
@@ -52,19 +50,15 @@ def save_cover(file):
     return cover
 
 
-# -------------------------
-# Функции для санитизации данных
-# -------------------------
 
+# Функции для санитизации данных
 def sanitize_description(text):
     """Очищает описание книги от потенциально опасных тегов"""
     return bleach.clean(text, tags=[])
 
 
-# -------------------------
-# Функции для работы с сессиями
-# -------------------------
 
+# Функции для работы с сессиями
 def add_to_recent_views(book_id):
     """Добавляет книгу в список недавно просмотренных для анонимного пользователя"""
     recent_views = current_app.config.get('recent_views', [])
@@ -75,10 +69,7 @@ def add_to_recent_views(book_id):
         current_app.config['recent_views'] = recent_views
 
 
-# -------------------------
 # Функции для экспорта в CSV
-# -------------------------
-
 def generate_csv(data, headers):
     """Генерирует CSV-файл из данных"""
     si = StringIO()
